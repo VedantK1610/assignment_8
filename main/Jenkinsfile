@@ -1,0 +1,20 @@
+pipeline{
+    agent any
+    stages{
+        stage('Static Analysis'){
+            steps{
+                echo 'Static Analysis'
+            }
+        }
+        stage('Compile'){
+            steps{
+                bat 'javac HelloWorld.java'
+            }
+        }
+        stage('Run'){
+            steps{
+                echo 'java HelloWorld.java'
+            }
+        }
+    }
+}
